@@ -19,7 +19,7 @@ let g:jshint_enabled = 1
 command JSHint call <SID>JSHint()
 command JSHintReload call <SID>JSHintLoad()
 command JSHintToggle call <SID>JSHintToggle()
-autocmd BufWritePost,FileWritePost *.js call s:JSHint()
+autocmd BufLeave,BufWritePost,FileWritePost *.js call s:JSHint()
 autocmd BufWinLeave * call s:MaybeClearCursorLineColor()
 
 if !exists('s:jshint_plugin_path')
